@@ -1,0 +1,124 @@
+:root {
+  --white: #fff;
+  --light-gray: #bbb;
+  --dark-gray: #222;
+  --black: #000;
+  --blue: #4831d4;
+  --light-blue: #dad6f6;
+  --green: #ccf381;
+
+  --transitions: all 0.3s;
+}
+
+/* DEFAULTS/RESETS */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body {
+  color: var(--black);
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
+  font-size: 1.8rem;
+  background-color: var(--light-blue);
+}
+
+/* LAYOUT */
+.header,
+.main,
+.footer {
+  max-width: 135rem;
+  margin: 0 auto;
+}
+
+section {
+  padding: 6.4rem 1.6rem;
+  background-color: var(--white);
+}
+
+/* ELEMENTS */
+p {
+  line-height: 1.4;
+  font-weight: 300;
+}
+
+/* HEADINGS */
+.heading-primary {
+  text-transform: uppercase;
+  font-size: 12rem;
+  line-height: 1;
+}
+
+.heading-secondary {
+  font-size: 4.8rem;
+  text-transform: uppercase;
+  font-weight: 400;
+  letter-spacing: -2px;
+}
+
+.heading-tertiary {
+  font-size: 3.2rem;
+  line-height: 1;
+  font-weight: 500;
+  letter-spacing: -0.2rem;
+}
+
+/* BUTTONS AND LINKS */
+.btn,
+.link {
+  text-decoration: none;
+  transition: var(--transitions);
+}
+
+.btn {
+  color: var(--white);
+}
+
+.cta-btn:link,
+.cta-btn:visited {
+  color: var(--black);
+  background-color: var(--green);
+  padding: 0.8rem 1.6rem;
+  border-radius: 100px;
+  border: 2px solid transparent;
+}
+
+.cta-btn:hover,
+.cta-btn:active,
+.cta-btn:focus {
+  color: var(--green);
+  background-color: transparent;
+  border: 2px solid var(--green);
+}
+
+.link:link,
+.link:visited {
+  color: var(--light-blue);
+}
+
+/* UTILITIES */
+.text-green {
+  color: var(--green);
+}
+
+.text-white {
+  color: var(--white);
+}
+
+.span-block {
+  display: block;
+}
+
+.block-mobile {
+  display: inline;
+}
+
+/* ANIMATIONS */
