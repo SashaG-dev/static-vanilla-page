@@ -22,9 +22,6 @@
   letter-spacing: -5px;
   font-size: 3.2rem;
   justify-self: center;
-  /* position: absolute;
-  left: 50%;
-  transform: translateX(-50%); */
 }
 
 /* NAVIGATION */
@@ -166,7 +163,7 @@
   display: grid;
   grid-template-columns: repeat(3, 40rem);
   justify-content: center;
-  column-gap: 1.6rem;
+  gap: 1.6rem;
 }
 
 .services-container::-webkit-scrollbar {
@@ -188,12 +185,39 @@
   gap: 0.8rem;
 }
 
-.service-card__text {
-  color: var(--light-gray);
+.service-card__headings {
+  display: grid;
+  grid-template-columns: min-content 1fr;
 }
 
 .service-card__heading {
   margin-bottom: 0.8rem;
+  color: var(--green);
+}
+
+.service-card__btn:link,
+.service-card__btn:visited {
+  font-size: 3.2rem;
+  justify-self: end;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--blue);
+  height: 2.4rem;
+  width: 2.4rem;
+  padding: 2.8rem;
+  border-radius: 50%;
+  margin-right: 0.8rem;
+}
+
+.service-card__btn:hover,
+.service-card__btn:active,
+.service-card__btn:focus {
+  background-color: transparent;
+}
+
+.service-card__text {
+  color: var(--light-gray);
 }
 
 .service-card__img {
@@ -215,11 +239,46 @@
 .contact {
   color: var(--white);
   background-color: var(--black);
+  text-align: center;
 }
 
 .contact__heading {
   color: var(--green);
-  text-align: center;
+  font-weight: 400;
+  letter-spacing: -2px;
+}
+
+.contact__btn:link,
+.contact__btn:visited {
+  color: var(--white);
+  font-size: 3.2rem;
+  background-color: var(--blue);
+  border: 2px solid transparent;
+  display: inline-block;
+  position: relative;
+}
+
+.contact__btn i {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  opacity: 0;
+  transition: var(--transitions);
+}
+
+.contact__btn:hover,
+.contact__btn:active,
+.contact__btn:focus {
+  background-color: transparent;
+  margin-right: 2.4rem;
+}
+
+.contact__btn:hover i,
+.contact__btn:active i,
+.contact__btn:focus i {
+  opacity: 1;
+  transform: translate(2.4rem, -50%);
 }
 
 /* FOOTER */

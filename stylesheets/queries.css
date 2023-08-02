@@ -6,6 +6,18 @@
     min-width: 150rem;
     max-width: 160rem;
   }
+
+  section {
+    padding: 6.4rem 3.2rem;
+  }
+
+  .hero__details {
+    right: 47%;
+  }
+
+  .hero__socials {
+    right: 3.2rem;
+  }
 }
 
 /* ~1300px - ~1500px */
@@ -15,6 +27,10 @@
   .footer {
     max-width: 150rem;
     margin: 0 auto;
+  }
+
+  .hero__details {
+    right: 38%;
   }
 }
 
@@ -113,6 +129,11 @@
   .heading-primary {
     font-size: 5.6rem;
   }
+
+  .heading-secondary {
+    font-size: 4rem;
+    letter-spacing: -2px;
+  }
 }
 
 /* ~620px */
@@ -134,6 +155,10 @@
 @media (max-width: 33.1em) {
   .heading-primary {
     font-size: 4rem;
+  }
+
+  .heading-secondary {
+    font-size: 3.2rem;
   }
 
   .hero__btn {
@@ -173,6 +198,10 @@
   .services {
     padding-left: 0;
     padding-right: 0;
+  }
+
+  .services__heading {
+    padding-left: 1.6rem;
   }
 
   .services-container {
