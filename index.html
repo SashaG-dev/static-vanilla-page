@@ -19,80 +19,93 @@
     <link rel="stylesheet" href="./stylesheets/queries.css" />
     <script defer src="./index.js"></script>
   </head>
+
   <body>
     <header class="header">
-      <nav class="nav">
-        <!-- DESKTOP -->
-        <ul class="nav__list nav--desktop">
-          <li class="nav__list-item">
-            <a
-              href="#services"
-              class="nav__link link"
-              title="Scroll down to Our Services"
-              >Our Services</a
-            >
-            <span class="text-green">/</span>
-          </li>
-          <li class="nav__list-item">
-            <a
-              href="#work"
-              class="nav__link link"
-              title="Scroll down to Projects"
-              >Projects</a
-            >
-            <span class="text-green">/</span>
-          </li>
-          <li class="nav__list-item">
-            <a
-              href="#contact"
-              class="nav__link link"
-              title="Scroll down to Contact Us"
-              >Contact Us</a
-            >
-          </li>
-        </ul>
+      <!-- DESKTOP -->
+      <div class="header--desktop">
+        <nav class="nav">
+          <ul class="nav__list nav--desktop">
+            <li class="nav__list-item">
+              <a
+                href="#services"
+                class="nav__link link"
+                title="Scroll down to Our Services"
+                >Our Services</a
+              >
+              <span class="text-green">/</span>
+            </li>
+            <li class="nav__list-item">
+              <a
+                href="#work"
+                class="nav__link link"
+                title="Scroll down to Projects"
+                >Projects</a
+              >
+              <span class="text-green">/</span>
+            </li>
+            <li class="nav__list-item">
+              <a
+                href="#contact"
+                class="nav__link link"
+                title="Scroll down to Contact Us"
+                >Contact Us</a
+              >
+            </li>
+          </ul>
+        </nav>
 
-        <!-- MOBILE -->
+        <a href="#" class="logo">MYM</a>
+
+        <a
+          href="#"
+          class="cta-btn btn header__btn"
+          title="Start a new project with us"
+          >Get Started</a
+        >
+      </div>
+
+      <!-- MOBILE -->
+      <div class="header--mobile">
+        <a href="#" class="logo">MYM</a>
+
         <button class="nav__btn" aria-label="Open mobile navigation">
           <span>&nbsp;</span>
         </button>
+      </div>
 
-        <ul class="nav__list nav--mobile">
-          <li class="nav__list-item">
-            <a
-              href="#services"
-              class="nav__link link"
-              title="Scroll down to Our Services"
-              >Our Services</a
-            >
-          </li>
-          <li class="nav__list-item">
-            <a
-              href="#work"
-              class="nav__link link"
-              title="Scroll down to Projects"
-              >Projects</a
-            >
-          </li>
-          <li class="nav__list-item">
-            <a
-              href="#contact"
-              class="nav__link link"
-              title="Scroll down to Contact Us"
-              >Contact Us</a
-            >
-          </li>
-        </ul>
+      <nav class="nav nav--mobile">
+        <div class="overlay"></div>
+
+        <div class="nav__mobile-container">
+          <ul class="nav__list nav--mobile">
+            <li class="nav__list-item">
+              <a
+                href="#services"
+                class="nav__link nav__link--mobile link"
+                title="Scroll down to Our Services"
+                >Our Services</a
+              >
+            </li>
+            <li class="nav__list-item">
+              <a
+                href="#work"
+                class="nav__link nav__link--mobile link"
+                title="Scroll down to Projects"
+                >Projects</a
+              >
+            </li>
+            <li class="nav__list-item">
+              <a
+                href="#contact"
+                class="nav__link nav__link--mobile link"
+                title="Scroll down to Contact Us"
+                >Contact Us</a
+              >
+            </li>
+          </ul>
+        </div>
       </nav>
-
-      <a href="#" class="logo">MYM</a>
-
-      <a
-        href="#"
-        class="cta-btn btn header__btn"
-        title="Start a new project with us"
-        >Get Started</a
-      >
     </header>
 
     <main class="main">

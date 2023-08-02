@@ -42,6 +42,7 @@ body {
 section {
   padding: 6.4rem 1.6rem;
   background-color: var(--white);
+  scroll-margin-top: 3.2rem;
 }
 
 /* ELEMENTS */
@@ -135,6 +136,21 @@ p {
 
 .mb-lg {
   margin-bottom: 4.8rem;
+}
+
+/* STATES */
+body.nav-open {
+  overflow: hidden;
+}
+
+.overlay.nav-open {
+  display: block;
+}
+
+.nav__mobile-container.nav-open {
+  transform: translateX(0);
+  opacity: 1;
+  visibility: visible;
 }
 
 /* ANIMATIONS */
