@@ -158,3 +158,36 @@ body.nav-open {
 }
 
 /* ANIMATIONS */
+@keyframes fadeLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-8rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes blurUp {
+  from {
+    filter: blur(5px);
+    transform: translateY(110%);
+  }
+
+  to {
+    filter: none;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
