@@ -45,6 +45,10 @@ section {
   scroll-margin-top: 3.2rem;
 }
 
+section:focus {
+  outline: none;
+}
+
 /* ELEMENTS */
 p {
   line-height: 1.4;
@@ -79,6 +83,11 @@ p {
   transition: var(--transitions);
 }
 
+.btn:focus,
+.link:focus {
+  outline: none;
+}
+
 .btn {
   color: var(--white);
 }
@@ -98,11 +107,6 @@ p {
   color: var(--green);
   background-color: transparent;
   border: 2px solid var(--green);
-}
-
-.link:link,
-.link:visited {
-  color: var(--light-blue);
 }
 
 /* UTILITIES */

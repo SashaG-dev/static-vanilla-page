@@ -17,7 +17,7 @@
 
 .header--mobile {
   display: none;
-  padding: 2.4rem 3.2rem;
+  padding: 1.6rem 3.2rem;
   background-color: var(--blue);
 }
 
@@ -144,7 +144,10 @@
   list-style: none;
 }
 
-.nav__link {
+.nav__link:link,
+.nav__link:visited {
+  color: var(--light-blue);
+  text-decoration: none;
   transition: var(--transitions);
 }
 
@@ -203,6 +206,7 @@
 
 .social-link:link,
 .social-link:visited {
+  color: var(--light-blue);
   font-size: 2.8rem;
   transition: var(--transitions);
 }
@@ -290,11 +294,117 @@
   filter: grayscale(0);
 }
 
+/* WORK */
+.work__container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, min-content);
+  column-gap: 3.2rem;
+  row-gap: 6.4rem;
+  width: 70%;
+  margin: 0 auto;
+}
+
+.work-card {
+  position: relative;
+}
+
+.work-card:hover > .work-card__img,
+.work-card__img:focus {
+  filter: grayscale(0);
+}
+
+.work-card p {
+  color: var(--dark-gray);
+  margin-bottom: 0.8rem;
+}
+
+.work-card--2 {
+  grid-row: 2 / 3;
+  grid-column: 2 / -1;
+  transform: translateY(-50%);
+}
+
+.work-card--3 {
+  grid-row: 2 / 3;
+}
+
+.work-card--more {
+  grid-row: 4 / -1;
+  grid-column: 1 / -1;
+  text-align: center;
+}
+
+.work-card__img {
+  width: 100%;
+  display: block;
+  filter: grayscale(100%);
+  justify-self: center;
+  margin-bottom: 0.8rem;
+  transition: var(--transitions);
+}
+
+.work-card--1 img {
+  border-radius: 25px 25px 0 25px;
+}
+
+.work-card--2 img {
+  border-radius: 0 25px 25px 25px;
+}
+
+.work-card--3 img {
+  border-radius: 25px 0 25px 25px;
+}
+
+.work-card__link:link,
+.work-card__link:visited {
+  display: inline-flex;
+  gap: 0.2rem;
+  align-items: center;
+  color: var(--blue);
+}
+
+.work-card__link i {
+  transition: var(--transitions);
+}
+
+.work-card__link:hover,
+.work-card__link:active,
+.work-card__link:focus {
+  color: var(--black);
+}
+
+.work-card__link:hover i,
+.work-card__link:active i,
+.work-card__link:focus i {
+  margin-left: 0.4rem;
+}
+
+.work__cta:link,
+.work__cta:visited {
+  font-size: 2.4rem;
+  color: var(--white);
+  background-color: var(--black);
+}
+
+.work__cta:hover,
+.work__cta:active,
+.work__cta:focus {
+  color: var(--black);
+  background-color: transparent;
+  border: 2px solid var(--black);
+}
+
 /* CONTACT */
 .contact {
   color: var(--white);
   background-color: var(--black);
   text-align: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .contact__heading {
