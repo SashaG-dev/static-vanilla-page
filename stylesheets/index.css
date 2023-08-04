@@ -256,6 +256,14 @@
   gap: 0.8rem;
 }
 
+.service-card--2 {
+  animation-delay: 0.5s;
+}
+
+.service-card--3 {
+  animation-delay: 1s;
+}
+
 .service-card__headings {
   display: grid;
   grid-template-columns: min-content 1fr;
@@ -319,6 +327,7 @@
 
 .work-card {
   position: relative;
+  transition: all 2s;
 }
 
 .work-card:hover > .work-card__img,

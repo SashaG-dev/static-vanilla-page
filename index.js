@@ -38,11 +38,73 @@ navBtn.addEventListener('click', function (e) {
 });
 
 // SECTIONS
+const allSections = document.querySelectorAll('.sections');
+const allHeadingContainers = document.querySelectorAll('.heading-container');
+const servicesContainer = document.querySelector('.services-container');
+const projectsContainer = document.querySelector('.work__container');
+const contactSubheading = document.querySelector('.contact__subheading');
 
-// SERVICES
+const observer = (func, options) => {
+  return new IntersectionObserver(func, options);
+};
 
-// PROJECTS
+function showElements(entries) {
+  const [entry] = entries;
+  if (entry.isIntersecting) {
+    const classes = entry.target.classList;
+    if (classes.contains('sections')) classes.add('show-section');
+    if (classes.contains('heading-container')) {
+      const heading = entry.target.querySelector('.heading-secondary');
+      heading.classList.add('show-heading');
+    }
+    if (classes.contains('services-container')) {
+      const cards = entry.target.querySelectorAll('.services-card');
+      cards.forEach((card) => card.classList.add('show-card'));
+    }
 
-// CONTACT
+    if (classes.contains('work__container')) {
+      const cards = entry.target.querySelectorAll('.work-card');
+      cards.forEach((card) => card.classList.add('show-card--fade'));
+    }
 
-// FOOTER
+    if (classes.contains('contact__subheading')) classes.add('show-subheading');
+  }
+}
+
+const options = { root: null, rootMargin: '0px', threshold: 0 };
+const optionsMargin = { root: null, rootMargin: '-100px' };
+
+const sectionsObserver = observer(showElements, options);
+allSections.forEach((section) => {
+  section.classList.add('hide-section');
+  sectionsObserver.observe(section);
+});
+
+const headingsObserver = observer(showElements, optionsMargin);
+allHeadingContainers.forEach((container) => {
+  container.querySelector('.heading-secondary').classList.add('hide-heading');
+  headingsObserver.observe(container);
+});
+
+const servicesObserver = observer(showElements, optionsMargin);
+function handleServices() {
+  const cards = servicesContainer.querySelectorAll('.services-card');
+  cards.forEach((card) => card.classList.add('hide-card'));
+  servicesObserver.observe(servicesContainer);
+}
+handleServices();
+
+const projectsObserver = observer(showElements, options);
+function handleProjects() {
+  const cards = projectsContainer.querySelectorAll('.work-card');
+  cards.forEach((card) => card.classList.add('hide-card'));
+  projectsObserver.observe(projectsContainer);
+}
+handleProjects();
+
+const subheadingObserver = observer(showElements, optionsMargin);
+function handleSubheading() {
+  contactSubheading.classList.add('hide-subheading');
+  subheadingObserver.observe(contactSubheading);
+}
+handleSubheading();
