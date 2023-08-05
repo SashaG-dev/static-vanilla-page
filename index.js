@@ -48,26 +48,32 @@ const observer = (func, options) => {
   return new IntersectionObserver(func, options);
 };
 
-function showElements(entries) {
+function showElements(entries, observer) {
   const [entry] = entries;
   if (entry.isIntersecting) {
     const classes = entry.target.classList;
-    if (classes.contains('sections')) classes.add('show-section');
+    if (classes.contains('sections')) {
+      classes.add('show-section');
+      observer.unobserve(entry.target);
+    }
     if (classes.contains('heading-container')) {
       const heading = entry.target.querySelector('.heading-secondary');
       heading.classList.add('show-heading');
+      observer.unobserve(entry.target);
     }
     if (classes.contains('services-container')) {
       const cards = entry.target.querySelectorAll('.services-card');
       cards.forEach((card) => card.classList.add('show-card'));
+      observer.unobserve(entry.target);
     }
 
     if (classes.contains('work__container')) {
       const cards = entry.target.querySelectorAll('.work-card');
       cards.forEach((card) => card.classList.add('show-card--fade'));
+      observer.unobserve(entry.target);
     }
-
     if (classes.contains('contact__subheading')) classes.add('show-subheading');
+    observer.unobserve(entry.target);
   }
 }
 
@@ -108,3 +114,36 @@ function handleSubheading() {
   subheadingObserver.observe(contactSubheading);
 }
 handleSubheading();
+
+// LAZY LOADING
+const imgContainers = document.querySelectorAll('.card-container');
+const allImg = document.querySelectorAll('.img');
+
+function showImg(entries, observer) {
+  const [entry] = entries;
+  if (entry.isIntersecting) {
+    const imgs = entry.target.querySelectorAll('.img');
+    imgs.forEach((img) => {
+      handleImg(img);
+    });
+  }
+  observer.unobserve(entry.target);
+}
+
+function handleImg(img) {
+  img.src = img.dataset.src;
+  img.addEventListener('load', function () {
+    this.classList.remove('blur-img');
+  });
+}
+
+const imgObserver = observer(showImg, {
+  root: null,
+  threshold: 0,
+  rootMargin: '200px',
+});
+imgContainers.forEach((container) => {
+  const imgs = container.querySelectorAll('.img');
+  imgs.forEach((img) => img.classList.add('blur-img'));
+  imgObserver.observe(container);
+});

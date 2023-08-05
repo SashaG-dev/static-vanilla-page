@@ -212,6 +212,10 @@ body.nav-open {
   visibility: visible;
 }
 
+.img.blur-img {
+  filter: blur(5px) grayscale(100%);
+}
+
 /* ANIMATIONS */
 @keyframes fadeLeft {
   from {
