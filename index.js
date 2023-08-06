@@ -121,12 +121,11 @@ const allImg = document.querySelectorAll('.img');
 
 function showImg(entries, observer) {
   const [entry] = entries;
-  if (entry.isIntersecting) {
-    const imgs = entry.target.querySelectorAll('.img');
-    imgs.forEach((img) => {
-      handleImg(img);
-    });
-  }
+  if (!entry.isIntersecting) return;
+  const imgs = entry.target.querySelectorAll('.img');
+  imgs.forEach((img) => {
+    handleImg(img);
+  });
   observer.unobserve(entry.target);
 }
 
